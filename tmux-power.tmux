@@ -129,7 +129,7 @@ fi
 if [[ $prefix_highlight_pos == 'R' || $prefix_highlight_pos == 'LR' ]]; then
     RS="#{prefix_highlight}$RS"
 fi
-tmux_set status-right "$RS"
+tmux_set status-right "$RS #(gitmux -cfg ~/.gitmux.conf "#{pane_current_path}")"
 
 # Window status
 tmux_set window-status-format " #I:#W#F "
